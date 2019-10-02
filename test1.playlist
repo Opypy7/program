@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="test\test_links_to_articles_reader.py::Test_test_links_to_articles_reader::test_for_empty_link" /><Add Test="test\test_links_to_articles_reader.py::Test_test_links_to_articles_reader::test_for_normal_link" /></Playlist>
