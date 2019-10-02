@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3eb0de13-16c5-49c0-820e-f78805cde889</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>program.py</StartupFile>
+    <StartupFile>test\all_tests.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,21 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="program.py" />
+    <Compile Include="src\main.py" />
+    <Compile Include="src\reader.py" />
+    <Compile Include="test1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\all_tests.py" />
+    <Compile Include="test\test_links_to_articles_reader.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="test\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
