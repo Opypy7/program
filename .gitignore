@@ -260,3 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 /program/.mypy_cache/3.7
+/program/explorer.txt
+/program/links_to_articles_reader.txt

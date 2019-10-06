@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3eb0de13-16c5-49c0-820e-f78805cde889</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test\test_links_to_articles_reader.py</StartupFile>
+    <StartupFile>src\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,19 +21,26 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\explorer.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="program.py" />
     <Compile Include="src\main.py" />
     <Compile Include="src\reader.py" />
-    <Compile Include="test\test_links_to_articles_reader.py">
+    <Compile Include="test\reader_tests\test_links_to_articles_reader.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\reader_tests\test_read_comments_authors.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="test\" />
+    <Folder Include="test\explorer_tests\" />
+    <Folder Include="test\reader_tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

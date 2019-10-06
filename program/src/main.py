@@ -1,6 +1,11 @@
-from reader import links_to_articles_reader
+from reader import Reader
+from explorer import Explorer
 
 # Specify url
 url = 'https://www.gazeta.pl/0,0.html'
-links_list = links_to_articles_reader(url)
-print(links_list)
+
+ex = Explorer(url)
+#ex.read_pritty()
+ex.write_to_file("explorer.txt")
+ex.explore_links_from_articles("links_to_articles_reader.txt")
+ex.explore_authors("authors.txt")
