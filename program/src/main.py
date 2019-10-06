@@ -1,5 +1,5 @@
 from reader import Reader
-from src.Explorer import Explorer
+from explorer import Explorer
 
 # Specify url
 url = 'https://www.gazeta.pl/0,0.html'
