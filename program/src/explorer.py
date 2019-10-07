@@ -7,15 +7,25 @@ class Explorer:
 
     def __init__(self, url):
         self._reader = Reader(url)
-      
+        if(self._reader is None):
+            return None
+        if(self._reader._soup is None):
+            self._reader = None
+            return None
+
     def read_pritty(self):
         print (self._reader._soup.get_text())
         
     def write_to_file(self, file_name):
+        if(self._reader is None):
+            return None
         text = self._reader._soup.get_text()
         write_text_to_file(file_name,text)
 
     def explore_links_from_articles(self, file_name):
+        if(self._reader is None):
+            return None
+        
         list = self._reader.links_to_articles_reader()
         f = open(file_name, "a")
         for element in list:
@@ -24,6 +34,9 @@ class Explorer:
         f.close()
 
     def explore_authors(self, file_name):
+        if(self._reader is None):
+            return None
+       
         list = self._reader.read_comments_authors()
         if(len(list)>10):
             for i in range(10):
