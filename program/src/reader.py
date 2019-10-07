@@ -7,8 +7,16 @@ class Reader:
         self._url = url
         if(is_link_ok(self._url) == False):
             return None
-        page = requests.get(self._url)
-        self._soup = BeautifulSoup(page.content, 'html.parser')
+        try:
+            response = requests.get(self._url)
+            response.encoding = 'utf-8'
+        except requests.RequestException as e:
+            print('There is problem with request, check the url or internet connection:\n')
+            print(e)
+            self._soup = None
+            return None
+
+        self._soup = BeautifulSoup(response.content, 'html.parser')
 
     def links_to_articles_reader(self):
         a_tags = self._soup.find_all('a')
